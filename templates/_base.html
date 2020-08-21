@@ -1,0 +1,60 @@
+<html>
+<head>
+ <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+ <link href="{{url_for('static', filename='DataTables/datatables.min.css')}}" rel="stylesheet">
+ <link href="{{url_for('static', filename='css/custom-datatable.css')}}" rel="stylesheet">
+ <style>
+
+    body {
+      background-color: #2D2D2D;
+    }
+
+    #header {
+      color: #1EC81E;
+      background-color: #141414;
+      position:fixed;
+      top:0;
+      height:50px;
+      width:100%;
+    }
+
+    a {
+      color: #00FF00;
+    }
+
+    h3 {
+      color: #1EC81E;
+    }
+
+    th {
+      color: #4BC84B;
+      background-color: #141414;
+    }
+
+    tr {
+      color: #64C864;
+    }
+
+    input {
+      color: #64C864;
+      background-color: #000000;
+      border-color: #000000;
+    }
+
+
+
+ </style>
+</head>
+<body>
+
+  <div class="jumbotron" id="header">
+    <h1 class="text-center">CSV File Viewer</h1>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

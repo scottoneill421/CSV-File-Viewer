@@ -1,0 +1,42 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+  <body>
+    <h3 class="text-center"></h3>
+    <div class="mt-4">
+      <table class="cell-border display compact" style="width: 100%" id="csv-table">
+        <thead>
+          <tr>
+            {% for header in content[0].keys() %}
+              <th>{{header}}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in content %}
+            <tr>
+              {% for header in content[0].keys() %}
+                <td>{{row[header]}}</td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <script type="text/javascript" src="{{url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'js/jquery-3.5.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'DataTables/datatables.min.js')}}"></script>
+
+    <script type="text/javascript">
+      $(document).ready( function () {
+        $('#csv-table').DataTable({
+          "paging": false
+        });
+      });
+    </script>
+
+  </body>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<head>
+  <style>
+    a {
+      background-color: #202020;
+      display: block;
+      width: 1000px;
+    }
+
+    a:hover {
+      color: #006400;
+      background-color: #141414
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container text-center">
+    {% for file in content %}
+      <p>
+        <a class="btn btn-default text-center" href="/{{ file }}/">
+            {{ file }}
+        </a>
+      </p>
+    {% endfor %}
+  </div>
+
+</body
+{% endblock %}
